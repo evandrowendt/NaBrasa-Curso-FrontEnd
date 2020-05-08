@@ -1,23 +1,33 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="author" content="Evandro Wendt"> 
+    <meta name="author" content="Evandro Wendt">
     <meta name="description" content="Site desenvolvido no curso de frontend completo">
     <meta name="keywords" content="curso, frontend, moderno">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/sass/principal.css">
+    <!--CSS principal-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/magnific-popup.css">
+    <!--MagnificPopup-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick-theme.css">
     <title>NA BRASA &bull; CHURRASCARIA</title>
 </head>
+
 <body>
 
+    <!-- cabeçalho topo -->
     <div class="container-fluid p-2 info" id="icones-topo">
         <div class="row">
-            <div class="col d-flex justify-content-center justify-content-md-between justify-content-sm-between align-items-baseline flex-wrap">
+            <div
+                class="col d-flex justify-content-center justify-content-md-between justify-content-sm-between align-items-baseline flex-wrap">
                 <di class="p-2 info-icones">
                     <a href="#" class="mr-2" alt="facebook"><i class="fab fa-facebook-square fa-2x"></i></a>
                     <a href="#" class="mr-2" alt="facebook"><i class="fab fa-instagram fa-2x"></i></a>
@@ -29,6 +39,7 @@
         </div>
     </div>
 
+    <!-- Tela Inicial -->
     <header>
         <div class="container">
             <div class="row row-bn align-items-center justify-content-center">
@@ -38,14 +49,16 @@
                             <small>Tem</small>
                             <strong>Rodízio</strong>
                         </h1>
-                        <a href="#" class="btn pedir-btn my-2 text-capitalize" class="trigger-btn" data-toggle="modal">Faça seu pedido</a>
+                        <a href="#pedidoModal" class="btn pedir-btn my-2 text-capitalize" class="trigger-btn"
+                            data-toggle="modal">Faça seu pedido</a>
                     </div>
                 </div>
             </div>
         </div>
-        <a href="#" class="btn btn-adiante"><i class="fas fa-arrow-down"></i></a>
+        <a href="#cardapio" class="btn btn-adiante" alt="ir para proxima sessão do site"><i class="fas fa-arrow-down"></i></a>
     </header>
 
+    <!-- menu flutuante -->
     <nav class="navbar navbar-expand-lg">
         <a href="#" class="navbar-brand"><img src="./media/img/logo/ilaranjaescuro.png" alt="logotipo"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#minhaNavBar">
@@ -59,27 +72,453 @@
         <div class="collapse navbar-collapse" id="minhaNavBar">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item">
-                    <li class="nav-item"><a href="#" class="nav-link text-capitalize">Home</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link text-capitalize">cardápio</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link text-capitalize">sobre</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link text-capitalize">Recomendações</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link text-capitalize">Equipe</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link text-capitalize">Cozinha</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link text-capitalize">Contatos</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link text-capitalize"></a></li>
+                <li class="nav-item"><a href="#" class="nav-link text-capitalize">Home</a></li>
+                <li class="nav-item"><a href="#cardapio" class="nav-link text-capitalize">cardápio</a></li>
+                <li class="nav-item"><a href="#sobre" class="nav-link text-capitalize">sobre</a></li>
+                <li class="nav-item"><a href="#recomendacoes" class="nav-link text-capitalize">Recomendações</a></li>
+                <li class="nav-item"><a href="#equipe" class="nav-link text-capitalize">Equipe</a></li>
+                <li class="nav-item"><a href="#cozinha" class="nav-link text-capitalize">Cozinha</a></li>
+                <li class="nav-item"><a href="#contato" class="nav-link text-capitalize">Contatos</a></li>
                 </li>
             </ul>
 
             <form class="form-inline d-none d-lg-block mr-5">
-                <a href="#" class="btn nav-btn text-capitalize" class="trigger-btn" data-toggle="modal">Pedir Agora</a>
+                <a href="#pedidoModal" class="btn nav-btn text-capitalize" class="trigger-btn" data-toggle="modal">Pedir Agora</a>
             </form>
         </div>
     </nav>
 
+    <!-- Cardápio -->
+    <section class="py-5" id="cardapio">
+        <div class="container my-5">
+            <h1 class="text-center"><i class="fas fa-utensils"></i></br>Pratos & Porções</h1>
+            <div class="carrosel row parent-container">
 
+                <div class="col-10 mx-auto col-sm-6 col-lg-4 my-3">
+                    <div class="item-container">
+                        <img src="./media/img/cardapio/c2.jpeg" alt="Item do cardápio"
+                            class="img-fluid img-thumbnail item-img">
+                        <a href="./media/img/cardapio/c2.jpeg">
+                            <h1 class="text-uppercase text-center item-link px-3">Ver Opções</h1>
+                        </a>
+                    </div>
+                </div>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+                <div class="col-10 mx-auto col-sm-6 col-lg-4 my-3">
+                    <div class="item-container">
+                        <img src="./media/img/cardapio/c3.jpeg" alt="Item do cardápio"
+                            class="img-fluid img-thumbnail item-img">
+                        <a href="./media/img/cardapio/c3.jpeg">
+                            <h1 class="text-uppercase text-center item-link px-3">Ver Opções</h1>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-10 mx-auto col-sm-6 col-lg-4 my-3">
+                    <div class="item-container">
+                        <img src="./media/img/cardapio/c4.jpeg" alt="Item do cardápio"
+                            class="img-fluid img-thumbnail item-img">
+                        <a href="./media/img/cardapio/c4.jpeg">
+                            <h1 class="text-uppercase text-center item-link px-3">Ver Opções</h1>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-10 mx-auto col-sm-6 col-lg-4 my-3">
+                    <div class="item-container">
+                        <img src="./media/img/cardapio/c5.jpeg" alt="Item do cardápio"
+                            class="img-fluid img-thumbnail item-img">
+                        <a href="./media/img/cardapio/c5.jpeg">
+                            <h1 class="text-uppercase text-center item-link px-3">Ver Opções</h1>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-10 mx-auto col-sm-6 col-lg-4 my-3">
+                    <div class="item-container">
+                        <img src="./media/img/cardapio/c6.jpeg" alt="Item do cardápio"
+                            class="img-fluid img-thumbnail item-img">
+                        <a href="./media/img/cardapio/c6.jpeg">
+                            <h1 class="text-uppercase text-center item-link px-3">Ver Opções</h1>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="container my-5">
+            <h1 class="text-center"><i class="fas fa-beer"></i></br>Bebidas</h1>
+            <div class="carrosel row parent-container">
+
+                <div class="col-10 mx-auto col-sm-6 col-lg-4 my-3">
+                    <div class="item-container">
+                        <img src="./media/img/bebidas/b1.jpeg" alt="Item do cardápio"
+                            class="img-fluid img-thumbnail item-img">
+                        <a href="./media/img/bebidas/b1.jpeg">
+                            <h1 class="text-uppercase text-center item-link px-3">Ver Opções</h1>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-10 mx-auto col-sm-6 col-lg-4 my-3">
+                    <div class="item-container">
+                        <img src="./media/img/bebidas/b3.jpeg" alt="Item do cardápio"
+                            class="img-fluid img-thumbnail item-img">
+                        <a href="./media/img/bebidas/b3.jpeg">
+                            <h1 class="text-uppercase text-center item-link px-3">Ver Opções</h1>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-10 mx-auto col-sm-6 col-lg-4 my-3">
+                    <div class="item-container">
+                        <img src="./media/img/bebidas/b4.jpeg" alt="Item do cardápio"
+                            class="img-fluid img-thumbnail item-img">
+                        <a href="./media/img/bebidas/b4.jpeg">
+                            <h1 class="text-uppercase text-center item-link px-3">Ver Opções</h1>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-10 mx-auto col-sm-6 col-lg-4 my-3">
+                    <div class="item-container">
+                        <img src="./media/img/bebidas/b7.jpeg" alt="Item do cardápio"
+                            class="img-fluid img-thumbnail item-img">
+                        <a href="./media/img/bebidas/b7.jpeg">
+                            <h1 class="text-uppercase text-center item-link px-3">Ver Opções</h1>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-10 mx-auto col-sm-6 col-lg-4 my-3">
+                    <div class="item-container">
+                        <img src="./media/img/bebidas/b6.jpeg" alt="Item do cardápio"
+                            class="img-fluid img-thumbnail item-img">
+                        <a href="./media/img/bebidas/b6.jpeg">
+                            <h1 class="text-uppercase text-center item-link px-3">Ver Opções</h1>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!--Sobre nós-->
+    <section class="py-5" id="sobre">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7 my-5 sobre-conteudo">
+                    <h1 class="text-uppercase display-5">Sobre Nós</h1>
+                    <h2>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                        the
+                        industry's standard dummy text ever since the 1500s,
+                        when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                    </h2>
+                    <a href="#" class="btn pedir-btn my-4 text-capitalize">Leia Mais</a>
+                </div>
+                <div class="col-md-5 col-sm-12 fotos-churrascaria">
+                    <img src="./media/img/churrascaria/r1.jpg" alt="Imagem de churrascaria" class="img-thumbnail">
+                    <img src="./media/img/churrascaria/r2.jpeg" alt="Imagem de churrascaria" class="img-thumbnail">
+                    <img src="./media/img/churrascaria/r3.jpeg" alt="Imagem de churrascaria" class="img-thumbnail">
+                    <img src="./media/img/churrascaria/r4.jpeg" alt="Imagem de churrascaria" class="img-thumbnail">
+                    <img src="./media/img/churrascaria/r5.jpeg" alt="Imagem de churrascaria" class="img-thumbnail">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Equipe -->
+    <section id="equipe">
+        <div class="container">
+            <h1 class="text-center"><i class="fas fa-users"><br>Equipe</i></h1>
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <div class="equipe">
+                        <div class="foto">
+                            <img src="./media/img/equipe/e01.jpg" alt="Foto do funcionário">
+                        </div>
+                        <div class="equipe-content">
+                            <h3 class="titulo">Maria</h3>
+                            <span class="funcao">Chefe</span>
+                        </div>
+                        <ul class="contatos">
+                            <li><a href="#" class="fab fa-facebook"></a></li>
+                            <li><a href="#" class="fab fa-twitter"></a></li>
+                            <li><a href="#" class="fab fa-google-plus"></a></li>
+                            <li><a href="#" class="fab fa-linkedin"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="equipe">
+                        <div class="foto">
+                            <img src="./media/img/equipe/e02.jpg" alt="Foto do funcionário">
+                        </div>
+                        <div class="equipe-content">
+                            <h3 class="titulo">João</h3>
+                            <span class="funcao">Chefe</span>
+                        </div>
+                        <ul class="contatos">
+                            <li><a href="#" class="fab fa-facebook"></a></li>
+                            <li><a href="#" class="fab fa-twitter"></a></li>
+                            <li><a href="#" class="fab fa-google-plus"></a></li>
+                            <li><a href="#" class="fab fa-linkedin"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="equipe">
+                        <div class="foto">
+                            <img src="./media/img/equipe/e03.jpg" alt="Foto do funcionário">
+                        </div>
+                        <div class="equipe-content">
+                            <h3 class="titulo">Ana</h3>
+                            <span class="funcao">Chefe</span>
+                        </div>
+                        <ul class="contatos">
+                            <li><a href="#" class="fab fa-facebook"></a></li>
+                            <li><a href="#" class="fab fa-twitter"></a></li>
+                            <li><a href="#" class="fab fa-google-plus"></a></li>
+                            <li><a href="#" class="fab fa-linkedin"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="equipe">
+                        <div class="foto">
+                            <img src="./media/img/equipe/e04.jpg" alt="Foto do funcionário">
+                        </div>
+                        <div class="equipe-content">
+                            <h3 class="titulo">Pedro</h3>
+                            <span class="funcao">Chefe</span>
+                        </div>
+                        <ul class="contatos">
+                            <li><a href="#" class="fab fa-facebook"></a></li>
+                            <li><a href="#" class="fab fa-twitter"></a></li>
+                            <li><a href="#" class="fab fa-google-plus"></a></li>
+                            <li><a href="#" class="fab fa-linkedin"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Cozinha-->
+    <section class="py-5" id="cozinha">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 col-sm-12 fotos-churrascaria" style="transform: rotate(-3deg)">
+                    <img src="./media/img/cozinha/c1.jpeg" alt="Imagem de cozinha" class="img-thumbnail">
+                    <img src="./media/img/cozinha/c2.jpeg" alt="Imagem de cozinha" class="img-thumbnail">
+                </div>
+                <div class="col-md-7 my-5 sobre-conteudo">
+                    <h1 class="text-uppercase display-5">Cozinha</h1>
+                    <h2>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                        the
+                        industry's standard dummy text ever since the 1500s,
+                        when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                    </h2>
+                    <a href="#" style="float: right" class="btn pedir-btn my-4 text-capitalize">Leia Mais</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Recomendações -->
+    <section id="recomendacoes" class="py-5">
+
+        <h1 class="text-center"><i class="fas fa-thumbs-up"></i> <br> Recomendações</h1>
+
+        <div id="slider" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-10 mx-auto d-flex recomendacao-item py-3">
+                                <!-- Foto da Pessoa -->
+                                <div class="align-self-center ml-5">
+                                    <img src="./media/img/equipe/e01.jpg" alt="Cliente"
+                                        class="rounded-circle recomendacao-foto">
+                                </div>
+                                <!-- Texto da Recomendação -->
+                                <div class="align-self-center recomendacao-nome px-5">
+                                    <h2 class="text-capitalize mb-3">Maria</h2>
+                                    <p class="recomendacao-texto">It is a long established fact that a reader will be
+                                        distracted by the readable content of a page when looking at its layout.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-10 mx-auto d-flex recomendacao-item py-3">
+
+                                <div class="align-self-center ml-5">
+                                    <img src="./media/img/equipe/e02.jpg" alt="Cliente"
+                                        class="rounded-circle recomendacao-foto">
+                                </div>
+                                <div class="align-self-center recomendacao-nome px-5">
+                                    <h2 class="text-capitalize mb-3">João</h2>
+                                    <p class="recomendacao-texto">It is a long established fact that a reader will be
+                                        distracted by the readable content of a page when looking at its layout.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-10 mx-auto d-flex recomendacao-item py-3">
+
+                                <div class="align-self-center ml-5">
+                                    <img src="./media/img/equipe/e03.jpg" alt="Cliente"
+                                        class="rounded-circle recomendacao-foto">
+                                </div>
+                                <div class="align-self-center recomendacao-nome px-5">
+                                    <h2 class="text-capitalize mb-3">Ana</h2>
+                                    <p class="recomendacao-texto">It is a long established fact that a reader will be
+                                        distracted by the readable content of a page when looking at its layout.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Controles do Carrosel -->
+                <a href="#slider" class="carousel-control-prev" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon"></span></a>
+                <a href="#slider" class="carousel-control-next" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon"></span></a>
+            </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato">
+        <div class="container-fluid no-padding">
+            <div class="row">
+                <div class="col-md-6 my-3">
+                    <div class="embed-responsive by9 mapa">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7156.945105459669!2d-49.38857455970513!3d-26.246322445726857!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ddd4985340f3b7%3A0x693099358d9f99d7!2sS%C3%A3o%20Bento%20do%20Sul%2C%20SC!5e0!3m2!1spt-BR!2sbr!4v1588769763681!5m2!1spt-BR!2sbr" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                    </div>
+                </div>
+                <div class="col-md-6 my-3 align-self-center">
+                    <div class="cartao text-center">
+                        <div class="cartao-cabecalho text-uppercase">
+                            <h1 class="text-uppercase">Entre em Contato</h1>
+                        </div>
+                        <div class="corpo-cartao">
+                            <form>
+                                <div class="input-group my-3">
+                                    <div class="input-group prepend">
+                                        <span class="input-group-text" id="input-nome">
+                                            <i class="fas fa-user"></i>
+                                        </span>
+                                        <input type="text" id="text" class="form-control form-control-lg" placeholder="Informe seu nome aqui...">
+                                    </div>
+                                </div>
+                                <div class="input-group my-3">
+                                    <div class="input-group prepend">
+                                        <span class="input-group-text" id="input-telefone">
+                                            <i class="fas fa-phone"></i>
+                                        </span>
+                                        <input type="text" id="telefone" class="form-control form-control-lg" placeholder="Informe seu telefone aqui...">
+                                    </div>
+                                </div>
+                                <div class="input-group my-3">
+                                    <div class="input-group prepend">
+                                        <span class="input-group-text" id="input-email">
+                                            <i class="fas fa-envelope"></i>
+                                        </span>
+                                        <input type="text" id="email" class="form-control form-control-lg" placeholder="Informe seu email aqui...">
+                                    </div>
+                                </div>
+                                <div class="input-group my-3">
+                                    <div class="input-group prepend">
+                                        <textarea class="form-control form-control-lg" id="mensagem" placeholder="Escreva sua mensagem aqui..."></textarea>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-block btn-lg text-uppercase contato-btn"><i class="far fa-hand-point-right mr-2">Enviar</i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- Rodapé -->
+     <footer>
+        <div class="container-fluid p-2 info" id="icones-topo">
+            <div class="row">
+                <div
+                    class="col d-flex justify-content-center justify-content-md-between justify-content-sm-between align-items-baseline flex-wrap">
+                    <di class="p-2 info-icones">
+                        <a href="#" class="mr-2" alt="facebook"><i class="fab fa-facebook-square fa-2x"></i></a>
+                        <a href="#" class="mr-2" alt="facebook"><i class="fab fa-instagram fa-2x"></i></a>
+                        <a href="#" class="mr-2" alt="facebook"><i class="fab fa-twitter-square fa-2x"></i></a>
+                        <a href="#" class="mr-2" alt="facebook"><i class="fab fa-whatsapp-square fa-2x"></i></a>
+                    </di>
+                </div>
+                <h2 id="logo" class="p-2 text-capitalize"><a href="#" title="Voltar ao Início">&copy;Copyright 2020</a></h2>
+            </div>
+        </div>
+        <a href="#" id="voltar-topo" class="p-1" title="Voltar ao topo"><i class="fas fa-arrow-circle-up fa-3x"></i></a>
+    </footer>
+
+    <!-- Tela modal - Pedidos -->
+    <div id="pedidoModal" class="modal fade">
+        <div class="modal-dialog modal-pedido">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="avatar">
+                        <img src="./media/img/pedir.png" alt="Imagem de pedido">
+                    </div>
+                    <h4 class="modal-title">Pedido Online</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="nome" placeholder="Digite o seu nome..." required="required">
+                        </div>
+                        <div class="form-group">
+                            <textarea name="pedido" rows="3" class="form-control" placeholder="Qual o seu pedido?" required="required"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-lg btn-block login-btn">Pedir</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="./js/jquery.ripples-min.js"></script> <!-- efeito de fumaça -->
+    <script src="./js/jquery.magnific-popup.js"></script>
+    <!--Efeito zoom das imagens cardápio-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.js"></script>
+    <script src="./js/script.js"></script>
 </body>
+
 </html>
